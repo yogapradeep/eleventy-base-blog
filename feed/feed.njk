@@ -3,11 +3,11 @@ permalink: feed/feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<!-- <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>{{ metadata.title }}</title>
 	<subtitle>{{ metadata.feed.subtitle }}</subtitle>
-	<link href="{{ metadata.feed.url }}" rel="self"/>
-	<link href="{{ metadata.url }}"/>
+	<link href="{{ metadata.feed.url }}" rel="self" />
+	<link href="{{ metadata.url }}" />
 	<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
 	<id>{{ metadata.feed.id }}</id>
 	<author>
@@ -18,10 +18,55 @@ eleventyExcludeFromCollections: true
 	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
 	<entry>
 		<title>{{ post.data.title }}</title>
-		<link href="{{ absolutePostUrl }}"/>
+		<link href="{{ absolutePostUrl }}" />
 		<updated>{{ post.date | rssDate }}</updated>
 		<id>{{ absolutePostUrl }}</id>
 		<content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 	</entry>
 	{%- endfor %}
-</feed>
+</feed> -->
+<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+	<channel>
+		<title>Pradeep Test Podcast</title>
+		<link>https://podcast-test.netlify.app/</link>
+		<description>
+			This is to test the rss feed for podcast
+			<![CDATA[<a href="http://www.apple.com">Apple</a>]]>
+		</description>
+		<language>en-us</language>
+
+		<googleplay:owner>v.yogapradeep@gmail.com</googleplay:owner>
+		<googleplay:author>Pradeep</googleplay:author>
+
+		<googleplay:image href="https://podcast-test.netlify.app/img/podcast.png" />
+
+		<itunes:owner>
+			<itunes:email>v.yogapradeep@gmail.com</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>false</itunes:explicit>
+		<itunes:category text="News & Politics" />
+
+
+		{%- for post in collections.posts %}
+		{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+		{%- if post.data.audio -%}
+		<item>
+			<guid isPermaLink="false">test</guid>
+			<title>{{ post.data.epi_title }}</title>
+			<description>{{post.data.epi_description}}</description>
+			<pubDate>{{ post.date | rssDate }}</pubDate>
+			<enclosure url="https://podcast-test.netlify.app/{{ post.data.audio }}" type="audio/mpeg"
+				length="{{post.data.size}}" />
+			<psc:chapters />
+			<psc:chapter start="0" title="Start" />
+			<psc:chapter start="1:35" title="halfway" href="" image="" />
+			<psc:chapter start="2:00" title="Last Minute of song" />
+			</psc:chapters>
+			<itunes:duration>{{post.data.duration}}</itunes:duration>
+			<itunes:keywords>Nocopywrite,music</itunes:keywords>
+		</item>
+		{%- endif -%}
+		{%- endfor %}
+	</channel>
+</rss>
