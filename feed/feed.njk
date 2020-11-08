@@ -25,8 +25,7 @@ eleventyExcludeFromCollections: true
 	</entry>
 	{%- endfor %}
 </feed> -->
-<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
-	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	<channel>
 		<title>Pradeep Test Podcast</title>
 		<link>https://podcast-test.netlify.app/</link>
@@ -56,10 +55,10 @@ eleventyExcludeFromCollections: true
 			<guid isPermaLink="false">test</guid>
 			<title>{{ post.data.epi_title }}</title>
 			<description>{{post.data.epi_description}}</description>
-			<pubDate>{{ post.date | rssDate }}</pubDate>
+			<pubDate>{{ post.date | toUTC }}</pubDate>
 			<enclosure url="https://podcast-test.netlify.app/{{ post.data.audio }}" type="audio/mpeg"
 				length="{{post.data.size}}" />
-			<psc:chapters>
+			<psc:chapters version="1.2" xmlns:psc="http://podlove.org/simple-chapters">
 				<psc:chapter start="0" title="Start" />
 				<psc:chapter start="1:35" title="halfway" href="" image="" />
 				<psc:chapter start="2:00" title="Last Minute of song" />

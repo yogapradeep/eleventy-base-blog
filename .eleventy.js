@@ -18,6 +18,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
   });
+  eleventyConfig.addFilter('toUTC', (dateObj) => {
+    return dateObj.toUTCString();
+  });
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
