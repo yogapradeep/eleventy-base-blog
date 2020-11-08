@@ -32,7 +32,7 @@ eleventyExcludeFromCollections: true
 		<link>https://podcast-test.netlify.app/</link>
 		<description>
 			This is to test the rss feed for podcast
-			<![CDATA[<a href="http://www.apple.com">Apple</a>]]>
+
 		</description>
 		<language>en-us</language>
 
@@ -44,29 +44,30 @@ eleventyExcludeFromCollections: true
 		<itunes:owner>
 			<itunes:email>v.yogapradeep@gmail.com</itunes:email>
 		</itunes:owner>
-		<itunes:explicit>false</itunes:explicit>
-		<itunes:category text="News & Politics" />
+		<itunes:explicit>no</itunes:explicit>
+		<itunes:category text="pop &amp; Music">
+			<itunes:category text="indie" />
 
 
-		{%- for post in collections.posts %}
-		{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-		{%- if post.data.audio -%}
-		<item>
-			<guid isPermaLink="false">test</guid>
-			<title>{{ post.data.epi_title }}</title>
-			<description>{{post.data.epi_description}}</description>
-			<pubDate>{{ post.date | rssDate }}</pubDate>
-			<enclosure url="https://podcast-test.netlify.app/{{ post.data.audio }}" type="audio/mpeg"
-				length="{{post.data.size}}" />
-			<psc:chapters />
-			<psc:chapter start="0" title="Start" />
-			<psc:chapter start="1:35" title="halfway" href="" image="" />
-			<psc:chapter start="2:00" title="Last Minute of song" />
-			</psc:chapters>
-			<itunes:duration>{{post.data.duration}}</itunes:duration>
-			<itunes:keywords>Nocopywrite,music</itunes:keywords>
-		</item>
-		{%- endif -%}
-		{%- endfor %}
+			{%- for post in collections.posts %}
+			{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+			{%- if post.data.audio -%}
+			<item>
+				<guid isPermaLink="false">test</guid>
+				<title>{{ post.data.epi_title }}</title>
+				<description>{{post.data.epi_description}}</description>
+				<pubDate>{{ post.date | rssDate }}</pubDate>
+				<enclosure url="https://podcast-test.netlify.app/{{ post.data.audio }}" type="audio/mpeg"
+					length="{{post.data.size}}" />
+				<psc:chapters />
+				<psc:chapter start="0" title="Start" />
+				<psc:chapter start="1:35" title="halfway" href="" image="" />
+				<psc:chapter start="2:00" title="Last Minute of song" />
+				</psc:chapters>
+				<itunes:duration>{{post.data.duration}}</itunes:duration>
+				<itunes:keywords>Nocopywrite,music</itunes:keywords>
+			</item>
+			{%- endif -%}
+			{%- endfor %}
 	</channel>
 </rss>
