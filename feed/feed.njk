@@ -28,7 +28,8 @@ eleventyExcludeFromCollections: true
 <rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0/play-podcasts.xsd"
 	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<atom:link href="https://podcast-test.netlify.app/rss.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://podcast-test.netlify.app/feed/feed.xml" rel="self" type="application/rss+xml" />
+		<atom:link type="text/html" href="http://podlove.org/" />
 		<title>Music stuff</title>
 		<link>https://podcast-test.netlify.app/</link>
 		<description>About Non-copyrighted music</description>
@@ -40,9 +41,8 @@ eleventyExcludeFromCollections: true
 
 		<googleplay:image href="https://podcast-test.netlify.app/img/podcast.png" />
 
-		<itunes:title>Music stuff</itunes:title>
 
-		<itunes:image><a href="https://podcast-test.netlify.app/img/podcast.png"></a></itunes:image>
+		<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
 		<itunes:explicit>no</itunes:explicit>
 		<itunes:owner>
 			<itunes:email>v.yogapradeep@gmail.com</itunes:email>
@@ -58,14 +58,14 @@ eleventyExcludeFromCollections: true
 		{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
 		{%- if post.data.audio -%}
 		<item>
-			<guid></guid>
+			<guid>letmego</guid>
 			<title>{{ post.data.epi_title }}</title>
 			<description>{{post.data.epi_description}}</description>
 			<pubDate>{{ post.data.pubdate | toUTC }}</pubDate>
 			<link>https://podcast-test.netlify.app/posts/secondpost/index.html</link>
 			<enclosure url="https://podcast-test.netlify.app/{{ post.data.audio }}" type="audio/mpeg"
 				length="{{post.data.size}}" />
-			<psc:chapters version="1.2">
+			<psc:chapters version="1.2" xmlns:psc="http://podlove.org/simple-chapters">
 				<psc:chapter start="0" title="Start" />
 				<psc:chapter start="1:35" title="halfway" href="" image="" />
 				<psc:chapter start="2:00" title="Last Minute of song" />
