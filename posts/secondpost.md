@@ -8,11 +8,15 @@ tags:
   - test3
 layout: layouts/post.njk
 
-audio: "audio/test.mp3"
-epi_title: Test podcast 2
-epi_description: " Description Test Podcast 2"
+audio: "audio/let_me_go.mp3"
+epi_title: let me go 
+epi_description: " let me go non-copyrighted song to the  test podcast rss feed   <![CDATA[
+    <b>This to test bold </b> <i>to check italicize</i>
+  ]]>"
+pubdate: 2020-11-04 
 size: 7556772 
 duration: 3:09
+keywords: Nocopywrite,music,Dubstep,Dark 
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
@@ -31,3 +35,4 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
             Your browser does not support the
             <code>audio</code> element.
     </audio>
+    
