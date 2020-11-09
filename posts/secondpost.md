@@ -10,9 +10,7 @@ layout: layouts/post.njk
 
 audio: "audio/let_me_go.mp3"
 epi_title: let me go 
-epi_description: " let me go non-copyrighted song to the  test podcast rss feed   <![CDATA[
-    <b>This to test bold </b> <i>to check italicize</i>
-  ]]>"
+epi_description: " let me go non-copyrighted song to the  test podcast rss feed   "
 pubdate: 2020-11-04 
 size: 7556772 
 duration: 3:09
