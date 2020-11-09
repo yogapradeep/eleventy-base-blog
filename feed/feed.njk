@@ -58,7 +58,7 @@ eleventyExcludeFromCollections: true
 		{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
 		{%- if post.data.audio -%}
 		<item>
-			<guid>letmego</guid>
+			<guid isPermaLink="false">letmego</guid>
 			<title>{{ post.data.epi_title }}</title>
 			<description>{{post.data.epi_description}}</description>
 			<pubDate>{{ post.data.pubdate | toUTC }}</pubDate>
