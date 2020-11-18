@@ -40,6 +40,8 @@ eleventyExcludeFromCollections: true
 		<googleplay:author>Pradeep</googleplay:author>
 
 		<googleplay:image href="https://podcast-test.netlify.app/img/podcast.png" />
+		<googleplay:category text="Music" />
+		<googleplay:explicit>no</googleplay:explicit>
 
 
 		<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
@@ -70,6 +72,7 @@ eleventyExcludeFromCollections: true
 				<psc:chapter start="1:35" title="halfway" href="" image="" />
 				<psc:chapter start="2:00" title="Last Minute of song" />
 			</psc:chapters>
+			<googleplay:explicit>no</googleplay:explicit>
 			<itunes:duration>{{post.data.duration}}</itunes:duration>
 			<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
 			<itunes:keywords>{{post.data.keywords}}</itunes:keywords>
