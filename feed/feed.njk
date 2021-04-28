@@ -14,60 +14,50 @@ eleventyExcludeFromCollections: true
 		<name>{{ metadata.author.name }}</name>
 		<email>{{ metadata.author.email }}</email>
 	</author>
-	<!-- {%- for post in collections.posts %}
-	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-	<entry>
-		<title>{{ post.data.title }}</title>
-		<link href="{{ absolutePostUrl }}" />
-		<updated>{{ post.date | rssDate }}</updated>
-		<id>{{ absolutePostUrl }}</id>
-		<content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-	</entry>
-	{%- endfor %} -->
-</feed>
 
-<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0/play-podcasts.xsd"
-	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<atom:link href="https://podcast-test.netlify.app/feed/feed.xml" rel="self" type="application/rss+xml" />
-		<atom:link type="text/html" href="http://podlove.org/" />
-		<title>Audio flim</title>
-		<link>https://podcast-test.netlify.app/</link>
-		<description>We produce an Audio flim</description>
+	<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0/play-podcasts.xsd"
+		xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+		<channel>
+			<atom:link href="https://podcast-test.netlify.app/feed/feed.xml" rel="self" type="application/rss+xml" />
+			<atom:link type="text/html" href="http://podlove.org/" />
+			<title>Audio flim</title>
+			<link>https://podcast-test.netlify.app/</link>
+			<description>We produce an Audio flim</description>
 
-		<language>en-us</language>
+			<language>en-us</language>
 
-		<googleplay:owner>v.yogapradeep@gmail.com</googleplay:owner>
-		<googleplay:author>Pradeep</googleplay:author>
+			<googleplay:owner>v.yogapradeep@gmail.com</googleplay:owner>
+			<googleplay:author>Pradeep</googleplay:author>
 
-		<googleplay:image href="https://podcast-test.netlify.app/img/podcast.png" />
-		<googleplay:category text="Film" />
-		<googleplay:explicit>no</googleplay:explicit>
-
-
-
-
-
-		{%- for post in collections.posts %}
-		{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-		{%- if post.data.audio -%}
-		<item>
-			<guid isPermaLink="false">letmego</guid>
-			<title>{{ post.data.epi_title }}</title>
-			<description>{{post.data.epi_description}}</description>
-			<pubDate>{{ post.data.pubdate | toUTC }}</pubDate>
-			<link>https://podcast-test.netlify.app/posts/secondpost/index.html</link>
-			<enclosure url="https://podcast-test.netlify.app/{{ post.data.audio }}" type="audio/mpeg"
-				length="{{post.data.size}}" />
-			<psc:chapters version="1.2" xmlns:psc="http://podlove.org/simple-chapters">
-				<psc:chapter start="0" title="Start" />
-				<psc:chapter start="2:00" title="halfway" href="" image="" />
-				<psc:chapter start="3:00" title="Last Minute of audio flim" />
-			</psc:chapters>
+			<googleplay:image href="https://podcast-test.netlify.app/img/podcast.png" />
+			<googleplay:category text="Film" />
 			<googleplay:explicit>no</googleplay:explicit>
 
-		</item>
-		{%- endif -%}
-		{%- endfor %}
-	</channel>
-</rss>
+
+
+
+
+			{%- for post in collections.posts %}
+			{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+			{%- if post.data.audio -%}
+			<item>
+				<guid isPermaLink="false">letmego</guid>
+				<title>{{ post.data.epi_title }}</title>
+				<description>{{post.data.epi_description}}</description>
+				<pubDate>{{ post.data.pubdate | toUTC }}</pubDate>
+				<link>https://podcast-test.netlify.app/posts/secondpost/index.html</link>
+				<enclosure url="https://podcast-test.netlify.app/{{ post.data.audio }}" type="audio/mpeg"
+					length="{{post.data.size}}" />
+				<psc:chapters version="1.2" xmlns:psc="http://podlove.org/simple-chapters">
+					<psc:chapter start="0" title="Start" />
+					<psc:chapter start="2:00" title="halfway" href="" image="" />
+					<psc:chapter start="3:00" title="Last Minute of audio flim" />
+				</psc:chapters>
+				<googleplay:explicit>no</googleplay:explicit>
+
+			</item>
+			{%- endif -%}
+			{%- endfor %}
+		</channel>
+	</rss>
+</feed>
