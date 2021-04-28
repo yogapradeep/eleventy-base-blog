@@ -1,16 +1,16 @@
 {
-  "title": "Your Blog Name",
-  "url": "https://myurl.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "title": "Audio flim blog",
+  "url": "https://podcast-test.netlify.app/",
+  "description": "I am creating an audio flim",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "I am creating an audio flim",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "url": "https://myurl.com/feed/feed.xml",
-    "id": "https://myurl.com/"
+    "url": "https://podcast-test.netlify.app//feed/feed.xml",
+    "id": "https://podcast-test.netlify.app/"
   },
   "author": {
-    "name": "Your Name Here",
-    "email": "youremailaddress@example.com"
+    "name": "pradeep",
+    "email": "v.yogapradeep@gmail.com"
   }
 }
