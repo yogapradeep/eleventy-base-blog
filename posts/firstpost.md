@@ -6,6 +6,13 @@ tags:
   - another-tag
   - test
 layout: layouts/post.njk
+audio: "audio/maanasvi_demo.mp3"
+epi_title: "Maanasvi"
+epi_description: "Maanasvi audio flim"
+pubdate: 2021-04-28 
+size: 2115117 
+duration: 4:12
+keywords: Nocopywrite,
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
@@ -15,6 +22,12 @@ Bring to the table win-win survival strategies to ensure proactive domination. A
 
 Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
 
+ <audio
+        controls
+        src="/{{ audio }}">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
 ``` text/2-3
 // this is a command
 function myCommand() {

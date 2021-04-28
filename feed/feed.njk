@@ -3,36 +3,15 @@ permalink: feed/feed.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<!-- <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>{{ metadata.title }}</title>
-	<subtitle>{{ metadata.feed.subtitle }}</subtitle>
-	<link href="{{ metadata.feed.url }}" rel="self" />
-	<link href="{{ metadata.url }}" />
-	<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
-	<id>{{ metadata.feed.id }}</id>
-	<author>
-		<name>{{ metadata.author.name }}</name>
-		<email>{{ metadata.author.email }}</email>
-	</author>
-	{%- for post in collections.posts %}
-	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-	<entry>
-		<title>{{ post.data.title }}</title>
-		<link href="{{ absolutePostUrl }}" />
-		<updated>{{ post.date | rssDate }}</updated>
-		<id>{{ absolutePostUrl }}</id>
-		<content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-	</entry>
-	{%- endfor %}
-</feed> -->
+
 <rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0/play-podcasts.xsd"
 	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<atom:link href="https://podcast-test.netlify.app/feed/feed.xml" rel="self" type="application/rss+xml" />
 		<atom:link type="text/html" href="http://podlove.org/" />
-		<title>Music stuff</title>
+		<title>Audio flim</title>
 		<link>https://podcast-test.netlify.app/</link>
-		<description>About Non-copyrighted music</description>
+		<description>We produce an Audio flim</description>
 
 		<language>en-us</language>
 
@@ -40,20 +19,11 @@ eleventyExcludeFromCollections: true
 		<googleplay:author>Pradeep</googleplay:author>
 
 		<googleplay:image href="https://podcast-test.netlify.app/img/podcast.png" />
-		<googleplay:category text="Music" />
+		<googleplay:category text="Film" />
 		<googleplay:explicit>no</googleplay:explicit>
 
 
-		<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
-		<itunes:explicit>no</itunes:explicit>
-		<itunes:owner>
-			<itunes:email>v.yogapradeep@gmail.com</itunes:email>
-		</itunes:owner>
-		<itunes:author>Pradeep</itunes:author>
-		<itunes:category text="Music">
-			<itunes:category text="Music History" />
-		</itunes:category>
-		<itunes:type>serial</itunes:type>
+
 
 
 		{%- for post in collections.posts %}
@@ -69,16 +39,11 @@ eleventyExcludeFromCollections: true
 				length="{{post.data.size}}" />
 			<psc:chapters version="1.2" xmlns:psc="http://podlove.org/simple-chapters">
 				<psc:chapter start="0" title="Start" />
-				<psc:chapter start="1:35" title="halfway" href="" image="" />
-				<psc:chapter start="2:00" title="Last Minute of song" />
+				<psc:chapter start="2:00" title="halfway" href="" image="" />
+				<psc:chapter start="3:00" title="Last Minute of audio flim" />
 			</psc:chapters>
 			<googleplay:explicit>no</googleplay:explicit>
-			<itunes:duration>{{post.data.duration}}</itunes:duration>
-			<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
-			<itunes:keywords>{{post.data.keywords}}</itunes:keywords>
-			<itunes:explicit>no</itunes:explicit>
-			<itunes:episode>1</itunes:episode>
-			<itunes:season>1</itunes:season>
+
 		</item>
 		{%- endif -%}
 		{%- endfor %}
