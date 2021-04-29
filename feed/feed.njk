@@ -31,9 +31,15 @@ eleventyExcludeFromCollections: true
 		<googleplay:category text="Film" />
 		<googleplay:explicit>no</googleplay:explicit>
 
+		<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
+		<itunes:owner>
+			<itunes:email>v.yogapradeep@gmail.com</itunes:email>
+		</itunes:owner>
+		<itunes:author>Pradeep</itunes:author>
 
-
-
+		<itunes:category text="TV & Film">
+		</itunes:category>
+		<itunes:type>serial</itunes:type>
 
 		{%- for post in collections.posts %}
 		{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
@@ -52,18 +58,6 @@ eleventyExcludeFromCollections: true
 				<psc:chapter start="3:00" title="Last Minute of audio flim" />
 			</psc:chapters>
 			<googleplay:explicit>no</googleplay:explicit>
-			<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
-			<itunes:explicit>no</itunes:explicit>
-			<itunes:owner>
-				<itunes:email>v.yogapradeep@gmail.com</itunes:email>
-			</itunes:owner>
-			<itunes:author>Pradeep</itunes:author>
-			<itunes:category text="Music">
-				<itunes:category text="Music History" />
-			</itunes:category>
-			<itunes:type>serial</itunes:type>
-
-
 			<itunes:duration>{{post.data.duration}}</itunes:duration>
 			<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
 			<itunes:keywords>{{post.data.keywords}}</itunes:keywords>
