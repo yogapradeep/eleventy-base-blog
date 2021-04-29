@@ -1,9 +1,9 @@
 {
-  "title": "Audio flim blog",
+  "title": "Audio flim",
   "url": "https://podcast-test.netlify.app/",
-  "description": "I am creating an audio flim",
+  "description": "We are creating an audio flim",
   "feed": {
-    "subtitle": "I am creating an audio flim",
+    "subtitle": "We are creating an audio flim",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://podcast-test.netlify.app//feed/feed.xml",

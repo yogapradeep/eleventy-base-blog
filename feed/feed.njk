@@ -8,7 +8,9 @@ eleventyExcludeFromCollections: true
 	<channel>
 		<atom:link href="https://podcast-test.netlify.app/feed/feed.xml" rel="self" type="application/rss+xml" />
 		<atom:link type="text/html" href="http://podlove.org/" />
+
 		<title>{{ metadata.title }}</title>
+		<description>{{ metadata.description }}</description>
 		<subtitle>{{ metadata.feed.subtitle }}</subtitle>
 		<link href="{{ metadata.feed.url }}" rel="self" />
 		<link href="{{ metadata.url }}" />
@@ -18,9 +20,7 @@ eleventyExcludeFromCollections: true
 			<name>{{ metadata.author.name }}</name>
 			<email>{{ metadata.author.email }}</email>
 		</author>
-		<title>Audio flim</title>
-		<link>https://podcast-test.netlify.app/</link>
-		<description>We produce an Audio flim</description>
+
 
 		<language>en-us</language>
 
@@ -28,7 +28,7 @@ eleventyExcludeFromCollections: true
 		<googleplay:author>Pradeep</googleplay:author>
 
 		<googleplay:image href="https://podcast-test.netlify.app/img/podcast.png" />
-		<googleplay:category text="Film" />
+		<googleplay:category text="TV &amp; Film" />
 		<googleplay:explicit>no</googleplay:explicit>
 
 		<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
@@ -37,7 +37,7 @@ eleventyExcludeFromCollections: true
 		</itunes:owner>
 		<itunes:author>Pradeep</itunes:author>
 
-		<itunes:category text="TV &amp;Film" />
+		<itunes:category text="TV &amp; Film" />
 		<itunes:type>serial</itunes:type>
 
 		{%- for post in collections.posts %}
@@ -58,7 +58,7 @@ eleventyExcludeFromCollections: true
 			</psc:chapters>
 			<googleplay:explicit>no</googleplay:explicit>
 			<itunes:duration>{{post.data.duration}}</itunes:duration>
-			<itunes:image href="https://podcast-test.netlify.app/img/podcast.png" />
+
 			<itunes:keywords>{{post.data.keywords}}</itunes:keywords>
 			<itunes:explicit>no</itunes:explicit>
 			<itunes:episode>1</itunes:episode>
